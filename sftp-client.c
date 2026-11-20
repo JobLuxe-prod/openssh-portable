@@ -1325,7 +1325,7 @@ sftp_symlink(struct sftp_conn *conn, const char *oldpath, const char *newpath)
 
 	if (conn->version < 3) {
 		error("This server does not support the symlink operation");
-		return(SSH2_FX_OP_UNSUPPORTED);
+		return -1;
 	}
 	debug2("Sending SSH2_FXP_SYMLINK \"%s\" to \"%s\"", oldpath, newpath);
 
